@@ -11,11 +11,13 @@ FetchContent_MakeAvailable(gtest)
 file(GLOB_RECURSE TEST_SOURCES LIST_DIRECTORIES false *.h *.cpp)
 set(SOURCES ${TEST_SOURCES})
 
+set(BINARY ${CMAKE_PROJECT_NAME})
+
 add_executable(
-        unit_tests
+        ${BINARY}_tests
         ${TEST_SOURCES})
 
-target_link_libraries(unit_tests
+target_link_libraries(${BINARY}_tests
         PRIVATE
         yaMkvInfoReader_lib
         gtest_main
@@ -23,7 +25,7 @@ target_link_libraries(unit_tests
 
 # automatic discovery of unit tests
 include(GoogleTest)
-gtest_discover_tests(unit_tests
+gtest_discover_tests(${BINARY}_tests
         PROPERTIES
         LABELS "unit"
         DISCOVERY_TIMEOUT  # how long to wait (in seconds) before crashing

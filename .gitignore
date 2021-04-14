@@ -1,2 +1,16 @@
 /cmake-build-debug/
 .idea
+CMakeCache.txt
+CMakeFiles
+*.a
+Makefile
+*.cbp
+*.cmake
+**/CMakeFiles
+_deps/*
+bin/*
+src/yaMkvInfoReader_run
+
+*.log
+
+test/yaMkvInfoReader_tests

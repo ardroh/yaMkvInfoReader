@@ -1,7 +1,4 @@
-cmake_minimum_required(VERSION 3.19)
-project(yaMkvInfoReader_run)
-
-set(CMAKE_CXX_STANDARD 17)
+cmake_minimum_required(VERSION 3.16)
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(LIBAV REQUIRED IMPORTED_TARGET
@@ -22,12 +19,12 @@ set(BINARY ${CMAKE_PROJECT_NAME})
 file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.h *.cpp)
 set(SOURCES ${SOURCES})
 
-add_executable(${PROJECT_NAME} main.cpp options/IOptionsParser.h options/AppOptions.h options/CmdArgsOptionsParser.cpp options/CmdArgsOptionsParser.h ../test/options/CmdArgsOptionsParserShould.cpp)
+add_executable(${BINARY}_run ${SOURCES})
 add_library(${BINARY}_lib STATIC ${SOURCES})
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${Boost_INCLUDE_DIRS})
+target_include_directories(${BINARY}_run PUBLIC ${Boost_INCLUDE_DIRS})
 
-target_link_libraries(${PROJECT_NAME}
+target_link_libraries(${BINARY}_run
         PkgConfig::LIBAV
         ${Boost_LIBRARIES}
         )
