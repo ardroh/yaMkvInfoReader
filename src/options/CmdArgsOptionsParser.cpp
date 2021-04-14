@@ -1,10 +1,9 @@
 #include "CmdArgsOptionsParser.h"
 
 namespace options {
-    CmdArgsOptionsParser::CmdArgsOptionsParser(int argc, char **argv) {
-        for (int i = 1; i < argc; ++i) {
-            _args.push_back(std::string(argv[i]));
-        }
+    CmdArgsOptionsParser::CmdArgsOptionsParser(std::vector<std::string> && args)
+        : _args(std::move(args))
+    {
     }
 
     boost::optional<AppOptions> CmdArgsOptionsParser::Parse() {
@@ -17,4 +16,4 @@ namespace options {
         }
         return options;
     }
-}
+} //! options

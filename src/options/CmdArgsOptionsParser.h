@@ -5,14 +5,14 @@
 namespace options {
     class CmdArgsOptionsParser : public IOptionsParser {
     public:
-        CmdArgsOptionsParser(int argc, char** argv);
+        CmdArgsOptionsParser(std::vector<std::string> && args);
         virtual ~CmdArgsOptionsParser() = default;
     public:
         boost::optional<AppOptions> Parse() override;
     private:
         std::vector<std::string> _args;
     };
-} //!Options
+} //! options
 
 
 #endif //YAMKVINFOREADER_CMDARGSOPTIONSPARSER_H

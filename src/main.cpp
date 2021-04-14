@@ -2,7 +2,8 @@
 #include "options/CmdArgsOptionsParser.h"
 
 int main(int argc, char** argv) {
-    auto parser = options::CmdArgsOptionsParser(argc, argv);
+    auto args = std::vector<std::string>(argv, argv+argc);
+    auto parser = options::CmdArgsOptionsParser(std::move(args));
     auto options = parser.Parse();
     if (!options.has_value())
     {
