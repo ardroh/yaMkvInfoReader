@@ -15,7 +15,6 @@ namespace logging {
         va_list args;
         va_start (args, format);
         vsnprintf(_logBuffer, LOG_BUFFER_SIZE, format, args);
-        perror(_logBuffer);
         va_end (args);
         for (auto writer : _writers) {
             if (writer == nullptr) continue;;

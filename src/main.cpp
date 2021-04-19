@@ -24,6 +24,6 @@ int main(int argc, char** argv) {
         logger.Log(LogLevel::INFO, "File \"%s\" doesn't exist!", options.value().InputFilePath.c_str());
         return -1;
     }
-    std::cout << options.value().InputFilePath << std::endl;
+    logger.Log(LogLevel::INFO, "Filename: %s", options.value().InputFilePath.c_str());
     return 0;
 }
