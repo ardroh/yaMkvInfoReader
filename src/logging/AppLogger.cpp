@@ -4,9 +4,8 @@
 #include "AppLogger.h"
 
 namespace logging {
-    AppLogger::AppLogger(std::vector<std::shared_ptr<ILogWriter>> && aWriters)
-            : _writers(std::move(aWriters)) {
-
+    void AppLogger::AddWritter(std::shared_ptr<ILogWriter> writter) {
+        _writers.emplace_back(writter);
     }
 
     void AppLogger::Log(LogLevel logLevel, const char *format, ...) {
