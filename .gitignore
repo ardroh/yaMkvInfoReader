@@ -15,5 +15,6 @@ src/yaMkvInfoReader_run
 
 test/yaMkvInfoReader_tests
 debug/
+release/
 .vscode
 *.mkv
