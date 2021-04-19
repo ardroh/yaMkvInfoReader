@@ -23,5 +23,7 @@ int main(int argc, char** argv) {
         return -1;
     }
     Logger.Log(LogLevel::INFO, "Filename: %s", options.value().InputFilePath.c_str());
+    const auto fileSize = std::filesystem::file_size(options.value().InputFilePath);
+    Logger.Log(LogLevel::INFO, "File size: %lu bytes", fileSize);
     return 0;
 }
