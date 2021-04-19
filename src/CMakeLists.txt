@@ -10,13 +10,14 @@ pkg_check_modules(LIBAV REQUIRED IMPORTED_TARGET
         libswscale
         libavutil
         )
+find_package(Boost 1.71.0 COMPONENTS log)
 set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)
 
 set(BINARY ${CMAKE_PROJECT_NAME})
 
-file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.h *.cpp)
+file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.h *.cpp logging/*.h logging/*.cpp options/*)
 set(SOURCES ${SOURCES})
 
 add_executable(${BINARY}_run ${SOURCES})
