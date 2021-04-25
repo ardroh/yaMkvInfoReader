@@ -9,7 +9,7 @@ Software will provide basic information about the MKV file such as:
 
 ## Command args
 
-* ```-f filename.mkv``` - matroska file name to check
+* ```-f filename.mkv``` - name of the matroska file to check
 
 ## Running
 
