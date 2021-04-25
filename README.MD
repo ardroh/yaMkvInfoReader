@@ -7,9 +7,30 @@ Software will provide basic information about the MKV file such as:
 * streams,
 * codecs.
 
-## Getting Started
+## Command args
 
-TBD
+* ```-f filename.mkv``` - matroska file name to check
+
+## Running
+
+Run the following:
+
+```sh 
+./yaMkvInfoReader_run -f sample_640x360.mkv
+```
+
+**Output**:
+
+```
+yetAnotherMkvInfoReader starting
+Filename: sample_640x360.mkv
+File size: 573066 bytes
+Format name: Matroska / WebM
+Duration: 13s
+Number of streams: 1
+Streams:
+        0. Index: 0 Type: 0 Codec Id: 27
+```
 
 ### Prerequisites
 

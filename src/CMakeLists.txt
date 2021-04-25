@@ -17,13 +17,13 @@ set(Boost_USE_STATIC_RUNTIME OFF)
 
 set(BINARY ${CMAKE_PROJECT_NAME})
 
-file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.h *.cpp logging/*.h logging/*.cpp options/*)
+file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.h *.cpp logging/*.h logging/*.cpp options/* mkvs/*.h mkvs/*.cpp)
 set(SOURCES ${SOURCES})
 
 add_executable(${BINARY}_run ${SOURCES})
 add_library(${BINARY}_lib STATIC ${SOURCES})
 
-target_include_directories(${BINARY}_run PUBLIC ${Boost_INCLUDE_DIRS})
+target_include_directories(${BINARY}_run PUBLIC ${Boost_INCLUDE_DIRS} PkgConfig::LIBAV)
 
 target_link_libraries(${BINARY}_run
         PkgConfig::LIBAV

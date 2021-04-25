@@ -3,8 +3,11 @@
 
 namespace logging {
     enum class LogLevel {
+        DEBUG,
         INFO,
-        DEBUG
+        WARNING,
+        ERROR,
+        FATAL
     };
 } //!logging
 
